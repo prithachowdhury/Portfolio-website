@@ -1,187 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pritha Chowdhury - Portfolio</title>
-  <style>
-    :root {
-      --bg: #f4f4f4;
-      --text: #333;
-      --primary: #3498db;
-      --card: #fff;
-    }
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, FileText } from "lucide-react";
 
-    body.dark {
-      --bg: #1e1e1e;
-      --text: #e0e0e0;
-      --card: #2c2c2c;
-    }
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-white text-black px-6 py-10 font-sans max-w-3xl mx-auto">
+      <h1 className="text-4xl font-bold mb-2">Pritha Chowdhury</h1>
+      <p className="text-lg mb-6">
+        Food Technologist with cross-functional expertise in R&D, QA, and innovation — passionate about creating sustainable and consumer-driven food solutions.
+      </p>
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
-    }
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-2">About Me</h2>
+        <p>
+          I’m currently a Research & Innovation Intern at Alpro (Danone) and a New Business Developer at KU Leuven. With a background in Food Technology and Innovation & Entrepreneurship, I thrive at the intersection of science and business.
+        </p>
+      </section>
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid var(--primary);
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      margin: 0;
-    }
-
-    button.toggle-mode {
-      padding: 6px 12px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .section {
-      background: var(--card);
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      transition: background 0.3s;
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--primary);
-    }
-
-    .skills span {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin: 5px 5px 0 0;
-      animation: pop-in 0.3s ease forwards;
-    }
-
-    @keyframes pop-in {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .experience-toggle {
-      cursor: pointer;
-      color: var(--primary);
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-
-    .job-details {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .contact a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Pritha Chowdhury</h1>
-      <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
-    </header>
-
-    <div class="section contact">
-      <p><strong>Food Technologist | Innovation Specialist</strong></p>
-      <p>Email: <a href="mailto:pritha.email@example.com">pritha.email@example.com</a> |
-         LinkedIn: <a href="https://linkedin.com/in/pritha-chowdhury" target="_blank">pritha-chowdhury</a> |
-         Location: Belgium (Indian National, Needs Visa Sponsorship)</p>
-    </div>
-
-    <div class="section">
-      <h2>Profile</h2>
-      <p>Food Technologist with experience across QA, R&D, production, and customer service. Currently a Research & Innovation Intern at Alpro (Danone) and New Business Developer at KU Leuven. Seeking Food Tech roles in Belgium.</p>
-    </div>
-
-    <div class="section">
-      <h2>Experience</h2>
-      <div class="experience-toggle" onclick="toggleDetails('exp1')">▶ Alpro (Danone) – Intern</div>
-      <div class="job-details" id="exp1">
-        <ul>
-          <li>Worked on plant-based innovation and formulation optimization.</li>
-          <li>Collaborated with cross-functional R&D and marketing teams.</li>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-2">Experience</h2>
+        <ul className="space-y-4">
+          <li>
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="font-semibold">Research & Innovation Intern — Alpro (Danone)</h3>
+                <p className="text-sm">2024 – Present | Belgium</p>
+              </CardContent>
+            </Card>
+          </li>
+          <li>
+            <Card>
+              <CardContent className="p-4">
+                <h3 className="font-semibold">New Business Developer — KU Leuven</h3>
+                <p className="text-sm">2024 – Present | Belgium</p>
+              </CardContent>
+            </Card>
+          </li>
         </ul>
-      </div>
-      <div class="experience-toggle" onclick="toggleDetails('exp2')">▶ KU Leuven – New Business Developer</div>
-      <div class="job-details" id="exp2">
-        <ul>
-          <li>Market & feasibility analysis for food innovation projects.</li>
-          <li>Built bridges between research and entrepreneurship.</li>
-        </ul>
-      </div>
-    </div>
+      </section>
 
-    <div class="section">
-      <h2>Education</h2>
-      <ul>
-        <li>MSc in Food Technology – KU Leuven & UGent (2022–2024)</li>
-        <li>PG Diploma in Innovation & Entrepreneurship – KU Leuven (2024)</li>
-      </ul>
-    </div>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-2">Resume</h2>
+        <Button variant="outline">
+          <FileText className="mr-2 h-4 w-4" />
+          <a href="/PrithaChowdhury_Resume.pdf" target="_blank">Download Resume</a>
+        </Button>
+      </section>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Food R&D</span>
-        <span>Product Innovation</span>
-        <span>Quality Assurance</span>
-        <span>Sensory Analysis</span>
-        <span>Project Management</span>
-        <span>Data Analysis</span>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Languages</h2>
-      <ul>
-        <li>English – Fluent</li>
-        <li>Hindi – Native</li>
-        <li>Dutch – Basic</li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-
-    function toggleDetails(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-</body>
-</html>
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Contact</h2>
+        <div className="flex space-x-4 mt-2">
+          <a href="mailto:your-email@example.com" aria-label="Email">
+            <Mail />
+          </a>
+          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn">
+            <Linkedin />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
